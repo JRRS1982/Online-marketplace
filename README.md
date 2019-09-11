@@ -26,6 +26,7 @@ co.scan​(item)
 co.scan​(item)
 price = co.total
 ```
+
 The output from the checkout object is going to look something like:
 ```
 Basket: 001,002,003
@@ -40,9 +41,9 @@ Basket: 001,002,001,003
 Total price expected: £73.76
 ```
 
-Inputs: a command line application with OOP rules being used, promotional rules is going to be an argument passed to the checkout class so presumably different rules can be applied at different times, promotional rules is going to be an open struct or class perhaps, probably a struck as don't expect many methods on it. Items are going to an inheritance type object probably, maybe creating a new instance when scanned. So there will be a lot of objects being passed around, and interacted with via the command line.
+INPUTS: a command line application with OOP rules being used, promotional rules is going to be an argument passed to the checkout class so presumably different rules can be applied at different times, promotional rules is going to be an open struct or class perhaps, probably a struck as don't expect many methods on it. Items are going to an inheritance type object probably, maybe creating a new instance when scanned. So there will be a lot of objects being passed around, and interacted with via the command line.
 
-Outputs: As shown above, the checkout object is probably going to print a string over two lines that shows the product code of the objects in the 'basket' variable, and following that an interpolated string with the calculated 'total' price of the basket after the associated promotional discounts.
+OUTPUTS: As shown above, the checkout object is probably going to print a string over two lines that shows the product code of the objects in the 'basket' variable, and following that an interpolated string with the calculated 'total' price of the basket after the associated promotional discounts.
 
 ### <a name="user_story">User Stories</a>
 
@@ -83,9 +84,13 @@ following to run the file and install the gems:
 
 ### <a name="images">Images / UML / Diagrams / Notes</a>
 
+I mulled over class structure in markdown format after scribbling out my thoughts [here](class_structure.md)
+
 Should there be any images / hand drawn notes, please find them in the images folder of the project.
 
 ### <a name="reflection">Reflection and further development</a>
+
+I approached the project with a TDD mindset, creating this readme to establish the inputs / outputs, break down the user stories into small incremental steps and follow the process of creating a new Ruby project. I then played on paper to brainstorm the class structure in a class diagram and commenced with a feature test. I am attempting a top down approach, as the feature test will continue to show errors as i build the classes until a point when the first feature test passes and the processes is repeated for the next feature test.
 
 TBA: WHAT FURTHER FEATURES WOULD I ADD IF I HAD MORE TIME?
 
