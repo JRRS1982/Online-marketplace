@@ -3,6 +3,7 @@
 Class: Checkout
 
 - attributes: basket - hold a number of item objects.
+- attributes: promotional rules class is probably going to have to be passed to the checkout as an argument for calculation in the total. 
 - method: scan - receives an argument of an item and adds it to the basket.
 - method: total - calculates the price of the objects in the basket and returns the price after any promotion, probably hides some logic here.
 
