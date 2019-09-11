@@ -9,13 +9,13 @@ RSpec.describe 'Checkout' do
       expect(CO.basket.length).to eq(1)
     end
   end
-  
+
   context '#total' do
-    xit 'has a product code' do
+    it 'prints out the product code of an item in the basket' do
       CO = Checkout.new
       IT = Item.new(product_code: '002')
       CO.scan(IT)
-      expect(CO.total).to output("Basket: 002").to_stdout
+      expect { CO.total }.to output('Basket: 002').to_stdout
     end
   end
 end

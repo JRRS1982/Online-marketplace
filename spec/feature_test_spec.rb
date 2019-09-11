@@ -5,7 +5,7 @@ RSpec.describe 'CHECKOUT FEATURES: ' do
       LTab = Item.new(product_code: '002', name: 'Little table', price: 4500)
       CO = Checkout.new
       CO.scan(LTab)
-      expect(CO.total).to output("Basket: 002").to_stdout
+      expect { CO.total }.to output("Basket: 002").to_stdout
     end
   end
 end
