@@ -1,7 +1,6 @@
 # require './lib/checkout'
 
-RSpec.describe 'Checkout' do
-
+RSpec.describe 'Checkout features: ' do
   context '#total' do
     it 'std out receieves the basket with one product code' do
       LT = Item.new(product_code: 002, name: 'Little table', price: 4500)
