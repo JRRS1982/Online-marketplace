@@ -6,6 +6,7 @@ class Checkout
   end
 
   def scan(item_param)
+    @basket.push(item_param)
   end
 
 end
