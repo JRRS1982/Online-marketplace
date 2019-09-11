@@ -9,16 +9,23 @@ class Checkout
     @basket.push(item_param)
   end
 
-  def total(to_calculate = @basket)
-    basket_helper = 'Basket: '
+  def total(a_basket = @basket)
+    basket_calculator(a_basket)
+  end
 
-    if to_calculate.length == 0
-      print 'Basket: Nothing!'
+  private
+
+  def basket_calculator(a_basket = @basket)
+    if a_basket.length == 0
+      print "Basket: Nothing!"
+    elsif a_basket.length == 1
+      print "Basket: #{a_basket[0].product_code}"
     else
-      to_calculate.each { |x|
-        "#{basket_helper += x.product_code}"
+      print "Basket: "
+      print a_basket[0].product_code
+      a_basket.drop(1).select.map { |x|
+        print ", #{x.product_code}"
       }
-      print basket_helper
     end
   end
 end

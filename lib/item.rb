@@ -1,5 +1,4 @@
 class Item
-  
   def initialize(product_code)
     @product_code = product_code
   end

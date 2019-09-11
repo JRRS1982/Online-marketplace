@@ -55,6 +55,7 @@ OUTPUTS: As shown above, the checkout object is probably going to print a string
 >I want to only charge £8.50 per very cheap chair if the customer buys more than one at the same time,<br>
 >so that the customer feels good and we make more sales.
 
+> COMPLETE <br>
 >As an online marketplace,<br>
 >I want our checkout to scan items in any order,<br>
 >so that we don't need to fuss with the order of items at the till.
