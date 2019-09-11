@@ -10,6 +10,15 @@ class Checkout
   end
 
   def total(to_calculate = @basket)
-    print 'Basket: 002'.chomp
+    basket_helper = 'Basket: '
+
+    if to_calculate.length == 0
+      print 'Basket: Nothing!'
+    else
+      to_calculate.each { |x|
+        "#{basket_helper += x.product_code}"
+      }
+      print basket_helper
+    end
   end
 end
