@@ -19,26 +19,26 @@ module BasketCalculator
   def calculate_price(a_basket)
     total = 0
     if a_basket.length == 0
-      print "Total price expected: £0.00"
+      puts "Total price expected: £0.00"
     elsif a_basket.length == 1
       total += a_basket[0].price
       currency = number_to_currency(total)
-      print "Total price expected: #{currency}"
+      puts "Total price expected: #{currency}"
     else
       total = 0
       a_basket.each { |x|
         total += x.price.to_i
       }
-      print "Basket: "
-      output = total / 100
-      puts number_to_currency(output)
+      currency = number_to_currency(total)
+      puts "Total price expected: #{currency}"
     end
   end
 
-  private 
-  
+  private
+
   def number_to_currency(number)
-    output = (number / 100)
-    "£#{output}"
+    decimaled = (number / 100)
+    output = format("£%3.2f", decimaled)
+    output
   end
 end

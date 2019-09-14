@@ -14,6 +14,7 @@ class Checkout
 
   def total(a_basket = @basket)
     list_items(a_basket)
+    calculate_price(a_basket)
   end
 
   private

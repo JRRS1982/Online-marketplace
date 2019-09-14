@@ -21,14 +21,14 @@ RSpec.describe "CHECKOUT FEATURES: " do
   context "#total" do
     it "std out receieves the basket with one product code" do
       checkout1.scan(table)
-      expect { checkout1.total }.to output("Basket: 002\n").to_stdout
+      expect { checkout1.total }.to output("Basket: 002\nTotal price expected: £45.00\n").to_stdout
     end
 
     it "std out receives the total price expected of several items" do
       checkout1.scan(table)
       checkout1.scan(light)
       checkout1.scan(table)
-      expect { checkout1.total }.to output('Basket: 002, 003, 002\n Total price expected: £109.95').to_stdout
+      expect { checkout1.total }.to output('Basket: 002, 003, 002\n Total price expected: £109.95\n').to_stdout
     end
   end
 end
