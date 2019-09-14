@@ -11,6 +11,14 @@ RSpec.describe "Checkout" do
       checkout1.scan(item1)
       expect(checkout1.basket.length).to eq(1)
     end
+
+    it "saves multiple items to a basket" do
+      checkout1.scan(item1)
+      expect(checkout1.basket.length).to eq(1)
+      checkout1.scan(table)
+      expect(checkout1.basket.length).to eq(2)
+      expect(checkout1.basket[1].name).to eq("Little table")
+    end
   end
 
   context "#total" do
