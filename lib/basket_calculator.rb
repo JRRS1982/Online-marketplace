@@ -37,7 +37,7 @@ module BasketCalculator
   private
 
   def number_to_currency(number)
-    decimaled = (number / 100)
+    decimaled = (number.to_f / 100)
     output = format("£%3.2f", decimaled)
     output
   end

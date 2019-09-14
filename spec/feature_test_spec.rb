@@ -28,7 +28,7 @@ RSpec.describe "CHECKOUT FEATURES: " do
       checkout1.scan(table)
       checkout1.scan(light)
       checkout1.scan(table)
-      expect { checkout1.total }.to output('Basket: 002, 003, 002\n Total price expected: £109.95\n').to_stdout
+      expect { checkout1.total }.to output("Basket: 002, 003, 002\nTotal price expected: £109.95\n").to_stdout
     end
   end
 end
