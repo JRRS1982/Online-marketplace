@@ -1,4 +1,7 @@
+require "basket_calculator"
+
 class Checkout
+  include BasketCalculator
   attr_reader :basket
 
   def initialize
@@ -9,16 +12,8 @@ class Checkout
     @basket.push(item_param)
   end
 
-  def total(to_calculate = @basket)
-    basket_helper = 'Basket: '
-
-    if to_calculate.length == 0
-      print 'Basket: Nothing!'
-    else
-      to_calculate.each { |x|
-        "#{basket_helper += x.product_code}"
-      }
-      print basket_helper
-    end
+  def total(a_basket = @basket)
+    list_items(a_basket)
+    calculate_price(a_basket)
   end
 end

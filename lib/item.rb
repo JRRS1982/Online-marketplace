@@ -1,10 +1,9 @@
 class Item
-  
-  def initialize(product_code)
-    @product_code = product_code
-  end
+  attr_reader :product_code, :price, :name
 
-  def product_code
-    @product_code.values[0]
+  def initialize(product_code:, price:, name:)
+    @product_code = product_code
+    @price = price
+    @name = name
   end
 end
