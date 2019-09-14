@@ -1,4 +1,7 @@
+require "basket_calculator"
+
 class Checkout
+  include BasketCalculator
   attr_reader :basket
 
   def initialize
@@ -10,7 +13,7 @@ class Checkout
   end
 
   def total(a_basket = @basket)
-    basket_calculator(a_basket)
+    list_items(a_basket)
   end
 
   private

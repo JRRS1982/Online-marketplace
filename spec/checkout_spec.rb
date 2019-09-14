@@ -16,22 +16,22 @@ RSpec.describe "Checkout" do
   context "#total" do
     it "prints out the product code of an item in the basket" do
       checkout1.scan(item1)
-      expect { checkout1.total }.to output("Basket: 000").to_stdout
+      expect { checkout1.total }.to output("Basket: 000\n").to_stdout
     end
 
     it "the output can handle an empty basket" do
-      expect { checkout1.total }.to output("Basket: Nothing!").to_stdout
+      expect { checkout1.total }.to output("Basket: Nothing!\n Basket: Nothing!").to_stdout
     end
 
     it "the output can handle a different item in the basket" do
       checkout1.scan(table)
-      expect { checkout1.total }.to output("Basket: 002").to_stdout
+      expect { checkout1.total }.to output("Basket: 002\n").to_stdout
     end
 
     it "correctly adds a space between basket items" do
       checkout1.scan(table)
       checkout1.scan(table)
-      expect { checkout1.total }.to output("Basket: 002, 002").to_stdout
+      expect { checkout1.total }.to output("Basket: 002, 002\n").to_stdout
     end
   end
 end
