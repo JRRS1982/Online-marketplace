@@ -1,34 +1,38 @@
-require 'pry'
-
 module BasketCalculator
-  def list_items(a_basket)
-    if a_basket.length == 0
+  def list_items(basket)
+    if basket.length == 0
       puts "Basket: Nothing!"
-    elsif a_basket.length == 1
-      puts "Basket: #{a_basket[0].product_code}"
-    elsif a_basket.length > 1
+    elsif basket.length == 1
+      puts "Basket: #{basket[0].product_code}"
+    elsif basket.length > 1
       print "Basket: "
-      print a_basket[0].product_code
-      a_basket.drop(1).select.map { |x|
+      print basket[0].product_code
+      basket.drop(1).select.map do |x|
         print ", #{x.product_code}"
-      }
-      puts ''
+      end
+      puts ""
     end
   end
 
-  def calculate_price(a_basket)
+  def price_of_basket(basket)
+    basket.map(&:price).compact.sum
+  end
+
+  def calculate_price(basket, benefit)
     total = 0
-    if a_basket.length == 0
+    if basket.length == 0
       puts "Total price expected: £0.00"
-    elsif a_basket.length == 1
-      total += a_basket[0].price
+    elsif basket.length == 1
+      total += basket[0].price
+      total -= benefit
       currency = number_to_currency(total)
       puts "Total price expected: #{currency}"
     else
       total = 0
-      a_basket.each { |x|
+      basket.each do |x|
         total += x.price.to_i
-      }
+      end
+      total -= benefit
       currency = number_to_currency(total)
       puts "Total price expected: #{currency}"
     end
