@@ -9,13 +9,15 @@ module PromotionCalculator
   def benefit_given(basket = @basket, promotion = @promotion)
     output = 0.00
     all_discounts = 0.00
-    all_discounts = multi_item_discount(basket, promotion)
     if basket_value(basket) >= (promotion.price_over * 100)
       output = (promotion.basket_discount.to_f / 100) * basket_value(@basket)
     end
+    all_discounts = multi_item_discount(basket, promotion)
     all_discounts += output
     all_discounts
   end
+
+  private
 
   def multi_item_discount(basket = @basket, promotion = @promotion)
     if promotion.product_quantity == 0
