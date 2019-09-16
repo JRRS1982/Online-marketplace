@@ -13,6 +13,14 @@ RSpec.describe "CHECKOUT FEATURES: " do
 
   let(:checkout2) { Checkout.new(promotion) }
 
+  let(:table60) {
+    Item.new(
+      product_code: "002",
+      name: "Little table",
+      price: 6000
+    )
+  }
+
   let(:table) {
     Item.new(
       product_code: "002",
@@ -54,6 +62,13 @@ RSpec.describe "CHECKOUT FEATURES: " do
         checkout2.scan(table)
           expect { checkout2.total }.to output("Basket: 002\nTotal price expected: £45.00\n").to_stdout
       end
+
+
+      it "discount if matches qualifying criteria" do
+        checkout2.scan(table60)
+          expect { checkout2.total }.to output("Basket: 002\nTotal price expected: £54.00\n").to_stdout
+      end
+
     end
   end
 end
