@@ -10,5 +10,9 @@ RSpec.describe "BasketCalcalator" do
     it "can calculate price of one item in the basket" do
       expect(checkout.price_of_basket([table])).to eq(4500)
     end
+
+    it "can calculate price of two items in the basket" do
+      expect(checkout.price_of_basket([table, table])).to eq(9000)
+    end
   end
 end
