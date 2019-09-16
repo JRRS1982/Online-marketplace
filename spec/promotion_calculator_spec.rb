@@ -1,15 +1,17 @@
-require "promotion"
+# frozen_string_literal: true
 
-RSpec.describe "Promotion" do
+require 'promotion'
+
+RSpec.describe 'Promotion' do
   let(:checkout) { Checkout.new }
   let(:promotion) { Promotion.new }
 
   # testing state, dont like, need a more dynamic test to test behaviour.
-  it "has a default benefit when initialized with the checkout" do
+  it 'has a default benefit when initialized with the checkout' do
     expect(checkout.benefit_given).to eq(0)
   end
 
-  it "has a default benefit when initialized with the checkout" do
+  it 'has a default benefit when initialized with the checkout' do
     expect(checkout.benefit_given).to eq(0)
   end
 end

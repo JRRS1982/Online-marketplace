@@ -1,6 +1,8 @@
-require "simplecov"
-require "simplecov-console"
-require "rspec"
+# frozen_string_literal: true
+
+require 'simplecov'
+require 'simplecov-console'
+require 'rspec'
 
 SimpleCov.formatter = SimpleCov::Formatter::Console
 SimpleCov.start

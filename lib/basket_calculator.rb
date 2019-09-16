@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 module BasketCalculator
   def list_items(basket)
-    if basket.length == 0
-      puts "Basket: Nothing!"
+    if basket.empty?
+      puts 'Basket: Nothing!'
     elsif basket.length == 1
       puts "Basket: #{basket[0].product_code}"
     elsif basket.length > 1
-      print "Basket: "
+      print 'Basket: '
       print basket[0].product_code
       basket.drop(1).select.map do |x|
         print ", #{x.product_code}"
       end
-      puts ""
+      puts ''
     end
   end
 
@@ -20,8 +22,8 @@ module BasketCalculator
 
   def calculate_price(basket, benefit)
     total = 0
-    if basket.length == 0
-      puts "Total price expected: £0.00"
+    if basket.empty?
+      puts 'Total price expected: £0.00'
     elsif basket.length == 1
       total += basket[0].price
       total -= benefit
@@ -42,7 +44,7 @@ module BasketCalculator
 
   def number_to_currency(number)
     decimaled = (number.to_f / 100)
-    output = format("£%3.2f", decimaled)
+    output = format('£%3.2f', decimaled)
     output
   end
 end

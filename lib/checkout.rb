@@ -1,7 +1,9 @@
-require_relative "basket_calculator"
-require_relative "promotion_calculator"
-require_relative "promotion"
-require_relative "item"
+# frozen_string_literal: true
+
+require_relative 'basket_calculator'
+require_relative 'promotion_calculator'
+require_relative 'promotion'
+require_relative 'item'
 
 class Checkout
   include BasketCalculator
