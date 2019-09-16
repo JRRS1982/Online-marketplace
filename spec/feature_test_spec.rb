@@ -49,6 +49,11 @@ RSpec.describe "CHECKOUT FEATURES: " do
         checkout2.scan(table)
         expect { checkout2.total }.to output("Basket: 002, 002\nTotal price expected: £81.00\n").to_stdout
       end
+
+      it "no discount if outside qualifying criteria" do
+        checkout2.scan(table)
+          expect { checkout2.total }.to output("Basket: 002\nTotal price expected: £45.00\n").to_stdout
+      end
     end
   end
 end
