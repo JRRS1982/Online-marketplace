@@ -47,33 +47,36 @@ OUTPUTS: As shown above, the checkout object is probably going to print a string
 
 ### <a name="user_story">User Stories</a>
 
+>COMPLETE<br>
 >As an online marketplace,<br>
 >I want to offer 10% off to any customer that spends more than £60 in one basket,<br>
 >so that customers feel good and we make more sales.
-
->An an online marketplace,<br>
->I want to only charge £8.50 per very cheap chair if the customer buys more than one at the same time,<br>
->so that the customer feels good and we make more sales.
 
 > COMPLETE <br>
 >As an online marketplace,<br>
 >I want our checkout to scan items in any order,<br>
 >so that we don't need to fuss with the order of items at the till.
 
+>COMPLETE<br>
 >As an online marketplace,<br>
 >I want out new promotions software to be flexible and accept new conditions,<br>
 >so that I don't have to pay someone to update it each time an offer changes.
 
+>IN PROGRESS<br>
+>An an online marketplace,<br>
+>I want to only charge £8.50 per very cheap chair if the customer buys more than one at the same time,<br>
+>so that the customer feels good and we make more sales.
+
 #### Acceptance Criteria
 
-Please find the acceptance criteria [here](acceptance_criteria.md) i.e. some sudo tests.
+Please find the acceptance criteria [here](acceptance_criteria.md) i.e. some sudo tests to start me off.
 
 ### <a name="Tech">Tech Stack</a>
 
 * Ruby version 2.6.2
 * Test suite: RSpec
 * Test coverage: Simplecov
-* Code style: Rubocop 0.65.0
+* Code style: Rubocop 0.65.0 + standard gem styling.
 
 ### <a name="installation">Installation: how it works</a>
 
@@ -87,13 +90,13 @@ following to run the file and install the gems:
 
 I mulled over class structure in markdown format after scribbling out my thoughts [here](class_structure.md)
 
-Should there be any images / hand drawn notes, please find them in the images folder of the project.
+Please find UML in the images folder of the project.
 
 ### <a name="reflection">Reflection and further development</a>
 
-I approached the project with a TDD mindset, creating this readme to establish the inputs / outputs, break down the user stories into small incremental steps and follow the process of creating a new Ruby project. I then played on paper to brainstorm the class structure in a class diagram and commenced with a feature test. I am attempting a top down approach, as the feature test will continue to show errors as i build the classes until a point when the first feature test passes and the processes is repeated for the next feature test.
+I approached the project with a TDD mindset, creating this readme to establish the inputs / outputs, break down the user stories into small incremental steps and follow the process of creating a new Ruby project. I then played on paper to brainstorm the class structure in a class diagram and commenced with a feature test. I am attempting a top down approach, as the feature test will continue to show errors as i build the classes until a point when the first feature test passes and the processes is repeated for the next feature test. I followed the process well to start with, but had a few spikes where i needed to get the code written before tests, which were then created to ensure edge cases. I tried to test behavior over state.
 
-TBA: WHAT FURTHER FEATURES WOULD I ADD IF I HAD MORE TIME?
+Currently there is one user story - multi products reducing price of a product, that i have not completed. I hope to complete that shortly, which I should be able to do as i think that I have the right classes / modules in place to accommodate that and other changes (with some additional code in the promotional calculator / attributes in the promotion).
 
 ### Credits / team members
 

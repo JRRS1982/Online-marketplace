@@ -1,21 +1,21 @@
 module BasketCalculator
-  def list_items(a_basket)
-    if a_basket.length == 0
+  def list_items(basket)
+    if basket.length == 0
       puts "Basket: Nothing!"
-    elsif a_basket.length == 1
-      puts "Basket: #{a_basket[0].product_code}"
-    elsif a_basket.length > 1
+    elsif basket.length == 1
+      puts "Basket: #{basket[0].product_code}"
+    elsif basket.length > 1
       print "Basket: "
-      print a_basket[0].product_code
-      a_basket.drop(1).select.map do |x|
+      print basket[0].product_code
+      basket.drop(1).select.map do |x|
         print ", #{x.product_code}"
       end
       puts ""
     end
   end
 
-  def price_of_basket(a_basket)
-    a_basket.map(&:price).compact.sum
+  def price_of_basket(basket)
+    basket.map(&:price).compact.sum
   end
 
   def calculate_price(basket, benefit)

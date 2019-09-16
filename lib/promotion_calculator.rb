@@ -1,5 +1,4 @@
 module PromotionCalculator
-  
   def basket_value(basket = @basket)
     basket.map(&:price).compact.sum
   end

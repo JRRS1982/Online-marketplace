@@ -13,8 +13,8 @@ class Checkout
     @basket = []
   end
 
-  def scan(item_param)
-    @basket.push(item_param)
+  def scan(item)
+    @basket.push(item)
   end
 
   def total(basket = @basket)
