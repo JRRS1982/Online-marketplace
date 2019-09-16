@@ -17,12 +17,12 @@ class Checkout
     @basket.push(item_param)
   end
 
-  def total(a_basket = @basket, promotion = @promotion)
+  def total(basket = @basket, promotion = @promotion)
 # calculate benefit from a promotion
     benefit = benefit_given
 #  print out the shopping basket
-    list_items(a_basket)
+    list_items(basket)
 # pass basket and benefit to module to print the price
-    calculate_price(a_basket, benefit)
+    calculate_price(basket, benefit)
   end
 end

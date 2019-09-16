@@ -1,7 +1,17 @@
 require "checkout"
+require "pry"
 
 RSpec.describe "CHECKOUT FEATURES: " do
   let(:checkout1) { Checkout.new }
+
+  let(:promotion) { Promotion.new(
+    price_over: 60, 
+    basket_discount: 10
+    ) 
+  }
+
+  let(:checkout2) { Checkout.new(promotion) }
+
   let(:table) {
     Item.new(
       product_code: "002",
@@ -34,9 +44,9 @@ RSpec.describe "CHECKOUT FEATURES: " do
   context "#promotion" do
     context "#ten_percent_over_60" do
       it "provides the correct reduction to the price of a basket via total method" do
-        checkout1.scan(table)
-        checkout1.scan(table)
-        expect { checkout1.total }.to output("Basket: 002, 002\nTotal price expected: £81.00\n").to_stdout
+        checkout2.scan(table)
+        checkout2.scan(table)
+        expect { checkout2.total }.to output("Basket: 002, 002\nTotal price expected: £81.00\n").to_stdout
       end
     end
   end

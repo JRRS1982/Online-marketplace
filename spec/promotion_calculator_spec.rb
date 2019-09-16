@@ -12,6 +12,4 @@ RSpec.describe "Promotion" do
   it "has a default benefit when initialized with the checkout" do
     expect(checkout.benefit_given).to eq(0)
   end
-
-  it "has a "
 end

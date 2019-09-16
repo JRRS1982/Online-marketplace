@@ -1,15 +1,12 @@
 module PromotionCalculator
-  attr_reader :a_basket
 
-  def initialize(promotion)
-    @a_basket = []
-  end
-
-  def conditional
-    a_basket.map(&:price).compact.sum
+# not DRY as this is in the basket calculator.
+  def basket_value(basket = @basket)
+    basket.map(&:price).compact.sum
   end
 
   def benefit_given
-    0
+    output = (promotion.basket_discount.to_f / 100) * basket_value(@basket)
+    return output
   end
 end
