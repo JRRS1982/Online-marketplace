@@ -7,10 +7,10 @@ module BasketCalculator
     elsif a_basket.length > 1
       print "Basket: "
       print a_basket[0].product_code
-      a_basket.drop(1).select.map { |x|
+      a_basket.drop(1).select.map do |x|
         print ", #{x.product_code}"
-      }
-      puts ''
+      end
+      puts ""
     end
   end
 
@@ -18,7 +18,6 @@ module BasketCalculator
     a_basket.map(&:price).compact.sum
   end
 
-# going to need to change this method, so that it prints the prices and not a string, somehow adjust is so the post promotion price can be included. Convert it into a printing method.
   def calculate_price(basket, benefit)
     total = 0
     if basket.length == 0
@@ -30,9 +29,9 @@ module BasketCalculator
       puts "Total price expected: #{currency}"
     else
       total = 0
-      basket.each { |x|
+      basket.each do |x|
         total += x.price.to_i
-      }
+      end
       total -= benefit
       currency = number_to_currency(total)
       puts "Total price expected: #{currency}"

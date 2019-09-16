@@ -5,5 +5,4 @@ class Promotion
     @price_over = price_over
     @basket_discount = basket_discount
   end
-
 end

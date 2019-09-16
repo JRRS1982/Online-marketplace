@@ -1,14 +1,10 @@
 require "promotion"
-require "pry"
 
 RSpec.describe "Promotion" do
   let(:checkout) { Checkout.new }
   let(:promotion) { Promotion.new }
 
-  it "has a default benefit of zero" do
-    expect(checkout.benefit_given).to eq(0)
-  end
-
+  # testing state, dont like, need a more dynamic test to test behaviour.
   it "has a default benefit when initialized with the checkout" do
     expect(checkout.benefit_given).to eq(0)
   end

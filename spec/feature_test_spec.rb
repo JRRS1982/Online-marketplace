@@ -4,10 +4,11 @@ require "pry"
 RSpec.describe "CHECKOUT FEATURES: " do
   let(:checkout1) { Checkout.new }
 
-  let(:promotion) { Promotion.new(
-    price_over: 60, 
-    basket_discount: 10
-    ) 
+  let(:promotion) {
+    Promotion.new(
+      price_over: 60,
+      basket_discount: 10
+    )
   }
 
   let(:checkout2) { Checkout.new(promotion) }
