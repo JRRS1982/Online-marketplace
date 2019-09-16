@@ -1,5 +1,6 @@
-require "basket_calculator"
-require "promotion"
+require_relative "basket_calculator"
+require_relative "promotion"
+require_relative "item"
 
 class Checkout
   include BasketCalculator

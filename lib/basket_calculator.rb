@@ -1,5 +1,3 @@
-require 'pry'
-
 module BasketCalculator
   def list_items(a_basket)
     if a_basket.length == 0
@@ -16,6 +14,11 @@ module BasketCalculator
     end
   end
 
+  def price_of_basket(a_basket)
+    a_basket.map(&:price).compact.sum
+  end
+
+# going to need to change this method, so that it prints the prices and not a string, somehow adjust is so the post promotion price can be included. Convert it into a printing method.
   def calculate_price(a_basket)
     total = 0
     if a_basket.length == 0
