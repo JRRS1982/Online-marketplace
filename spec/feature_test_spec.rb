@@ -24,11 +24,17 @@ RSpec.describe "CHECKOUT FEATURES: " do
       expect { checkout1.total }.to output("Basket: 002\nTotal price expected: £45.00\n").to_stdout
     end
 
-    it "std out receives the total price expected of several items" do
+    it "std_out receives the total price expected of several items" do
       checkout1.scan(table)
       checkout1.scan(light)
       checkout1.scan(table)
       expect { checkout1.total }.to output("Basket: 002, 003, 002\nTotal price expected: £109.95\n").to_stdout
+    end
+  end
+
+  context "#promotion" do
+    context "#ten_percent_over_60" do
+
     end
   end
 end

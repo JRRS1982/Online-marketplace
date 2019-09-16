@@ -1,10 +1,12 @@
 require "basket_calculator"
+require "promotion"
 
 class Checkout
   include BasketCalculator
-  attr_reader :basket
+  attr_reader :basket, :promotion
 
-  def initialize
+  def initialize(promotion = Promotion.new)
+    @promotion = promotion
     @basket = []
   end
 
