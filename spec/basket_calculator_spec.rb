@@ -6,5 +6,9 @@ RSpec.describe "BasketCalcalator" do
     it "has a default price of zero" do
       expect(checkout.price_of_basket([])).to eq(0)
     end
+
+    it "can calculate price of one item in the basket" do
+      expect(checkout.price_of_basket([table])).to eq(4500)
+    end
   end
 end
